@@ -1,0 +1,3 @@
+[submodule "music-as-data"]
+	path = music-as-data
+	url = https://github.com/jonromero/music-as-data.git
