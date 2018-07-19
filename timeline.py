@@ -25,7 +25,7 @@ class Hit:
     self.length = length
 
   def render(self):
-    if self.sound:
+    if self.sound is not None:
       return pygame.sndarray.array(self.sound)/32767.0  #undo the as_int16 conversion
     # Render hit of "key" for "length" amound of seconds
     # XXX: Currently only uses a string pluck

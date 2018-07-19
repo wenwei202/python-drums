@@ -1,26 +1,26 @@
 from musical.theory import Note, Scale, Chord
 from musical.audio import playback
-
+import numpy as np
 from timeline import Hit, Timeline
 
 import pygame
-BD = pygame.mixer.Sound('music-as-data/samples/BassDrums1/bassdrum1.wav')
-SD = pygame.mixer.Sound('music-as-data/samples/SnareDrums1/snaredrum1.wav')
-HH = pygame.mixer.Sound('music-as-data/samples/HiHats1/hihat1.wav')
-C1 = pygame.mixer.Sound('music-as-data/samples/Cymbals1/cymbal1.wav')
-C2 = pygame.mixer.Sound('music-as-data/samples/Cymbals1/cymbal2.wav')
-FT = pygame.mixer.Sound('music-as-data/samples/TomTomDrums/tomtomdrum3.wav')
+BD = np.array(pygame.mixer.Sound('music-as-data/samples/BassDrums1/bassdrum1.wav'))
+SD = np.array(pygame.mixer.Sound('music-as-data/samples/SnareDrums1/snaredrum1.wav'))
+HH = np.array(pygame.mixer.Sound('music-as-data/samples/HiHats1/hihat1.wav'))
+C1 = np.array(pygame.mixer.Sound('music-as-data/samples/Cymbals1/cymbal1.wav'))
+C2 = np.array(pygame.mixer.Sound('music-as-data/samples/Cymbals1/cymbal2.wav'))
+FT = np.array(pygame.mixer.Sound('music-as-data/samples/TomTomDrums/tomtomdrum3.wav'))
 
 time = 0.0
 timeline = Timeline()
 
 sound_string = {}
-sound_string[BD] = "BD"
-sound_string[SD] = "SD"
-sound_string[HH] = "HH"
-sound_string[C1] = "C1"
-sound_string[C2] = "C2"
-sound_string[FT] = "FT"
+# sound_string[BD] = "BD"
+# sound_string[SD] = "SD"
+# sound_string[HH] = "HH"
+# sound_string[C1] = "C1"
+# sound_string[C2] = "C2"
+# sound_string[FT] = "FT"
 sound_string["BD"] = BD
 sound_string["SD"] = SD
 sound_string["HH"] = HH
