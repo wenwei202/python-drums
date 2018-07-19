@@ -6,12 +6,12 @@ from musical.audio import playback
 from timeline import Hit, Timeline
 
 import pygame
-BD = pygame.mixer.Sound('samples/BassDrums1/bassdrum1.wav')
-SD = pygame.mixer.Sound('samples/SnareDrums1/snaredrum1.wav')
-HH = pygame.mixer.Sound('samples/HiHats1/hihat1.wav')
-C1 = pygame.mixer.Sound('samples/Cymbals1/cymbal1.wav')
-C2 = pygame.mixer.Sound('samples/Cymbals1/cymbal2.wav')
-FT = pygame.mixer.Sound('samples/TomTomDrums/tomtomdrum3.wav')
+BD = pygame.mixer.Sound('music-as-data/samples/BassDrums1/bassdrum1.wav')
+SD = pygame.mixer.Sound('music-as-data/samples/SnareDrums1/snaredrum1.wav')
+HH = pygame.mixer.Sound('music-as-data/samples/HiHats1/hihat1.wav')
+C1 = pygame.mixer.Sound('music-as-data/samples/Cymbals1/cymbal1.wav')
+C2 = pygame.mixer.Sound('music-as-data/samples/Cymbals1/cymbal2.wav')
+FT = pygame.mixer.Sound('music-as-data/samples/TomTomDrums/tomtomdrum3.wav')
 
 time = 0.0
 timeline = Timeline()
@@ -34,8 +34,6 @@ def add(t, sound):
   timeline.add(t, Hit(sound_string[sound], 1, sound))
 
 r = re.compile('(.*)\s\[(\d*)\sx\s(\d*)\sfrom\s\((\d*),\s(\d*)\)\]\n')
-
-BD = pygame.mixer.Sound('samples/BassDrums1/bassdrum1.wav')
 
 
 with open('./example.txt', 'r') as fid:
