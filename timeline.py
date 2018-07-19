@@ -54,7 +54,7 @@ class Timeline:
     for time, hits in self.hits.items():
       for hit in hits:
         length = max(length, time + hit.length)
-    return length*1.2
+    return length*2.2
 
   def render(self):
     # Return timeline as audio array by rendering the hits
