@@ -31,33 +31,41 @@ sound_string["FT"] = FT
 def add(t, sound):
   timeline.add(t, Hit(sound_string[sound], 1, sound))
 
-gap = 0.2
-guns = open('21guns.tab').readlines()
 
-for line in guns:
-  if len(line) < 2:
-    time += 64*gap
-    continue
-  if len(line) < 12:
-    time += int(line)*gap
-    continue
-  sound = sound_string[line[0:2]]
-  pos = 0.0
-  for word in line[2:]:
-    if word == "|" or word == "\n":
-      continue
-    if word == "-":
-      pos += gap
-    else:
-      add(time + pos, sound)
-      pos += gap
+def make_sound(type):
+  mytimeline = Timeline()
+  mytimeline.add(0, Hit(type, 1, sound_string[type]))
+  data = mytimeline.render()
+  playback.play(data)
 
-print "Rendering audio..."
 
-data = timeline.render()
-
-print "Playing audio..."
-
-playback.play(data)
-
-print "Done!"
+# gap = 0.2
+# guns = open('21guns.tab').readlines()
+#
+# for line in guns:
+#   if len(line) < 2:
+#     time += 64*gap
+#     continue
+#   if len(line) < 12:
+#     time += int(line)*gap
+#     continue
+#   sound = sound_string[line[0:2]]
+#   pos = 0.0
+#   for word in line[2:]:
+#     if word == "|" or word == "\n":
+#       continue
+#     if word == "-":
+#       pos += gap
+#     else:
+#       add(time + pos, sound)
+#       pos += gap
+#
+# print "Rendering audio..."
+#
+# data = timeline.render()
+#
+# print "Playing audio..."
+#
+# playback.play(data)
+#
+# print "Done!"
